@@ -1,7 +1,10 @@
+import os
 from time import sleep
-from colorama import Fore, Style
+from colorama import Fore, Style, Back
 
-X = [[int(x) for x in line.strip()] for line in open('input.txt')]
+os.system("colors")
+
+X = [[int(x) for x in line.strip()] for line in open('in2.txt')]
 
 pos = [(-1, 0), (0, -1), (1, 0), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1)]
 rows = len(X)
@@ -21,8 +24,9 @@ def piscar(x, y):
           for col in range(colums):
                val = X[row][col]
                color = Fore.BLACK
-               if val == 9 or val == 10: color = Fore.YELLOW 
-               print(f'{color}{X[row][col]} {Style.RESET_ALL}', end='')
+               printval = 9 if val >= 9 or val == 0 else val
+               if printval == 9 : color = Fore.YELLOW 
+               print(f'{color}{printval} {Style.RESET_ALL}', end='')
           print()
      sleep(0.01)
 
