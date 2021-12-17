@@ -85,9 +85,14 @@ def decode(binario):
      # print(version,type)
      decode(binario)
 
+def hexToBin(hexValue):
+     binValue = ''
+     for c in hexValue:
+          binValue += f'{int(c, 16):04b}'
+     return binValue
 
 entrada = '9C0141080250320F1802104A08'
-binario = str(bin(int(entrada,16))[2:])
+binario = hexToBin(entrada)
 faltando = len(binario) % 4
 
 soma = 0
