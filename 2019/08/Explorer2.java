@@ -8,8 +8,7 @@ public class Explorer2 {
 
      public Explorer2(){
           valores = leArquivo("input.txt");
-          this.total = insert(0).tot;
-          tot();
+          System.out.println(insert(0).tot);
      }
 
      class Node{
@@ -44,13 +43,8 @@ public class Explorer2 {
           }
           return new Node(pos, tot);
      }
-
-     public void tot(){
-          System.out.println(this.total);
-     }
-
        
-     public static int[] leArquivo(String arquivo){
+     private static int[] leArquivo(String arquivo){
           try (BufferedReader reader = new BufferedReader(new FileReader(arquivo))) {
                String line = reader.readLine();
                String[] numsInt = line.split(" ");
@@ -61,7 +55,6 @@ public class Explorer2 {
                     i++;
                }   
                return nums;
-               
           } catch (IOException e) {
                System.out.println("erro");
                return null;
