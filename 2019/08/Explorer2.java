@@ -32,10 +32,10 @@ public class Explorer2 {
                pos = t.pos;
                filhos[i] = t.tot;
           }
-          if(qntFilhos == 0)
-               for(int i = 0; i < qntDados; i++) tot += valores[pos++];
-          else{
-               for(int i = 0; i < qntDados; i++) {
+          for(int i = 0; i < qntDados; i++) {
+               if(qntFilhos == 0)
+                    tot += valores[pos++];
+               else{
                     int a = valores[pos++];
                     if(--a < filhos.length)
                          tot += filhos[a];
