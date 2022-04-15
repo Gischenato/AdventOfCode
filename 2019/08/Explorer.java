@@ -14,16 +14,10 @@ public class Explorer {
      }
 
      private int insert(int pos){
-          if(pos > valores.length) return pos;
           int qntFilhos = valores[pos++];
           int qntDados = valores[pos++];
-          if(qntFilhos == 0){
-               for(int i = 0; i < qntDados; i++) this.total += valores[pos++];
-          }
-          else{
-               for(int i = 0; i < qntFilhos; i++) pos = insert(pos);
-               for(int i = 0; i < qntDados; i++) this.total += valores[pos++];
-          }
+          for(int i = 0; i < qntFilhos; i++) pos = insert(pos);
+          for(int i = 0; i < qntDados; i++) this.total += valores[pos++];
           return pos;
      }
 
