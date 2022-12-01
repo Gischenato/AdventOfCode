@@ -10,5 +10,4 @@ for line in open('in'):
         acc = 0
         continue
     acc += int(line)
-
 print(sum(biggest))
