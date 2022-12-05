@@ -35,8 +35,12 @@ def loadPiles():
 def move(frm, to, qnt):
     global piles
     print('moving ' + str(qnt) + ' from pile ' + str(frm) + ' to pile ' + str(to))
+    toAdd = []
     for _ in range(qnt):
-        piles[to].append(piles[frm].pop())
+        toAdd.append(piles[frm].pop())
+    toAdd.reverse()
+    for val in toAdd:
+        piles[to].append(val)
 
 def execute(inp):
     for val in inp:
