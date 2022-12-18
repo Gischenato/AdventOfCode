@@ -42,7 +42,7 @@ def fall(rock):
             break
         Y-=1
 
-for i in range(10):
+for i in range(2022):
     fall(rocks[curr_rock%len(rocks)])
     curr_rock+=1
 print(highest)
